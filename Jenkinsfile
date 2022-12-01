@@ -11,13 +11,13 @@ pipeline {
         stage('build') {
              
             steps {
-                sh scipt: "docker info"
+                sh script: "docker info"
             }
         }
        stage('image') {
 
             steps {
-                sh scipt: "docker image ls"
+                sh script: "docker image ls"
             }
         }
    }
