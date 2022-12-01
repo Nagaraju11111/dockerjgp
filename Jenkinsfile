@@ -20,4 +20,5 @@ pipeline {
                 sh scipt: "docker image ls"
             }
         }
+   }
 }
