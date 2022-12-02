@@ -20,7 +20,7 @@ pipeline {
                 sh script: "docker image ls"
             }
         }
-        stage('image') {
+        stage('image build') {
 
             steps {
                 sh script: "docker image build -t as:1.0 ."
