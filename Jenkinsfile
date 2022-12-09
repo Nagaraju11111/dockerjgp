@@ -1,5 +1,6 @@
 pipeline {
     agent { label 'DOCKER' }
+    triggers { pollSCM('* * * * 1-5') }
     stages {
         stage('vcs') {
              
@@ -23,7 +24,13 @@ pipeline {
         stage('image build') {
 
             steps {
-                sh script: "docker image build -t as:1.0 ."
+                sh script: "docker image pull 9052171017/student:1.0"
+            }
+        }
+        stage('image build') {
+
+            steps {
+                sh script: "docker container run -d -P --name cs 9052171017/student:1.0"
             }
         }
    }
