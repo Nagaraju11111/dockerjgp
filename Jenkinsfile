@@ -27,7 +27,7 @@ pipeline {
                 sh script: "docker image pull 9052171017/student:1.0"
             }
         }
-        stage('image build') {
+        stage('container') {
 
             steps {
                 sh script: "docker container run -d -P --name cs 9052171017/student:1.0"
